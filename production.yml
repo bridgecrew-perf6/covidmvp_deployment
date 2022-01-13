@@ -20,6 +20,6 @@ services:
         - 80:80/tcp
         - 443:443/tcp
       environment:
-        CERTBOT_EMAIL: owner@company.com
+        CERTBOT_EMAIL: admin@cidgoh.ca
       volumes:
           - letsencrypt:/etc/letsencrypt

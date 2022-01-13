@@ -17,12 +17,12 @@ RUN conda init bash
 RUN conda activate covidMVP
 
 # Requirements are installed here to ensure they will be cached.
-COPY requirements.txt .
+COPY ./COVID-MVP/requirements.txt .
 RUN pip install -r /app/requirements.txt \
     && rm -rf /app/requirements.txt
 
 
-COPY . /app
+COPY ./COVID-MVP /app
 
 COPY ./dockerConf/app/start.sh /start.sh
 RUN sed -i 's/\r$//g' /start.sh

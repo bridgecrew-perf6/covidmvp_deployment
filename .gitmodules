@@ -1,0 +1,3 @@
+[submodule "COVID-MVP"]
+	path = COVID-MVP
+	url = https://github.com/cidgoh/COVID-MVP.git
