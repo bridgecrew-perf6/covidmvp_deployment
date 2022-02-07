@@ -1,0 +1,13 @@
+version: '3'
+
+volumes:
+    letsencrypt:
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./dockerConf/app/Dockerfile
+    image: covid_mvp_production_app
+    ports:
+      - "8050:8050"
