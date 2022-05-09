@@ -49,16 +49,16 @@ Add the below line to you code.
 
 ### step 5 supervisor setup
 
-- update distrubution
+- update distrubution. 
 ``> sudo apt-get update -y``
-- install supervisor
+- install supervisor. 
 ``> sudo apt-get install supervisor -y``
-- check version
+- check version. 
 ``> supervisord -v``
--check status
-``systemctl status supervisor``
--  create covid mvp supervisor config file
-``sudo nano /etc/supervisor/conf.d/covidmvp.conf``
+-check status. 
+``systemctl status supervisor``. 
+-  create covid mvp supervisor config file. 
+``sudo nano /etc/supervisor/conf.d/covidmvp.conf``   
 - Add below text to config file. 
 ```[program:covidmvp]
     command=sudo docker-compose -f <path to production.yml file> up
@@ -71,10 +71,10 @@ Add the below line to you code.
     stderr_logfile=/var/log/supervisor/%(program_name)s_stderr.log
     stderr_logfile_maxbytes=10MB
     stdout_logfile=/var/log/supervisor/%(program_name)s_stdout.log
-    stdout_logfile_maxbytes=10MB```
-- Inform supervisor of a new config file
-``sudo supervisorctl reread``
-- Run the new configuration
-``sudo supervisorctl update``
-- check if configuration is running
+    stdout_logfile_maxbytes=10MB```. 
+- Inform supervisor of a new config file. 
+``sudo supervisorctl reread``. 
+- Run the new configuration. 
+``sudo supervisorctl update``. 
+- check if configuration is running. 
 ``sudo supervisorctl``
