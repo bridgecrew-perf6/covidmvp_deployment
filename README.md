@@ -8,8 +8,8 @@ using Docker, Nginx and a Linux server, with customizable header and footer.
 Make sure [NGINX](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/) is install on your system
 
 - ``sudo nano /etc/nginx/sites-available/default``
-- copy the below configuration to your into the above file and save 
-``
+- copy the below configuration to your into the above file and save. 
+```
   server {
     server_name  <domain or IP>;
 
@@ -24,7 +24,7 @@ Make sure [NGINX](https://docs.nginx.com/nginx/admin-guide/installing-nginx/inst
 
 }
 
-``
+```
   
 - ``sudo nginx -t`` verify configuration has no error.
 - ``sudo systemctl restart nginx``
@@ -59,8 +59,8 @@ Add the below line to you code.
 ``systemctl status supervisor``
 -  create covid mvp supervisor config file
 ``sudo nano /etc/supervisor/conf.d/covidmvp.conf``
-- Add below text to config file
-``[program:covidmvp]
+- Add below text to config file. 
+```[program:covidmvp]
     command=sudo docker-compose -f <path to production.yml file> up
     autostart=true
     autorestart=true
@@ -73,7 +73,7 @@ Add the below line to you code.
     stdout_logfile=/var/log/supervisor/%(program_name)s_stdout.log
     stdout_logfile_maxbytes=10MB``
 - Inform supervisor of a new config file
-``sudo supervisorctl reread``
+```sudo supervisorctl reread``
 - Run the new configuration
 ``sudo supervisorctl update``
 - check if configuration is running
