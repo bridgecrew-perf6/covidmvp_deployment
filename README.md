@@ -73,7 +73,7 @@ Add the below line to you code.
  stderr_logfile_maxbytes=10MB
  stdout_logfile=/var/log/supervisor/%(program_name)s_stdout.log
  stdout_logfile_maxbytes=10MB
- ```. 
+ ```
 - Inform supervisor of a new config file. 
 ``sudo supervisorctl reread``. 
 - Run the new configuration. 
