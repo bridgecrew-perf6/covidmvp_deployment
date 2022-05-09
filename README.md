@@ -60,18 +60,19 @@ Add the below line to you code.
 -  create covid mvp supervisor config file. 
 ``sudo nano /etc/supervisor/conf.d/covidmvp.conf``   
 - Add below text to config file. 
-```[program:covidmvp]
-    command=sudo docker-compose -f <path to production.yml file> up
-    autostart=true
-    autorestart=true
-    startretries=5
-    numprocs=1
-    startsecs=0
-    process_name=%(program_name)s_%(process_num)02d
-    stderr_logfile=/var/log/supervisor/%(program_name)s_stderr.log
-    stderr_logfile_maxbytes=10MB
-    stdout_logfile=/var/log/supervisor/%(program_name)s_stdout.log
-    stdout_logfile_maxbytes=10MB```. 
+```
+[program:covidmvp]
+ command=sudo docker-compose -f <path to production.yml file> up
+ autostart=true
+ autorestart=true
+ startretries=5
+ numprocs=1
+ startsecs=0
+ process_name=%(program_name)s_%(process_num)02d
+ stderr_logfile=/var/log/supervisor/%(program_name)s_stderr.log
+ stderr_logfile_maxbytes=10MB
+ stdout_logfile=/var/log/supervisor/%(program_name)s_stdout.log
+ stdout_logfile_maxbytes=10MB```. 
 - Inform supervisor of a new config file. 
 ``sudo supervisorctl reread``. 
 - Run the new configuration. 
